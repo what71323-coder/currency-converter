@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <section class="converter-card">
+            <header class="header">
+                <h1>Currency Converter</h1>
+                <p>Convert currencies using live exchange rates.</p>
+            </header>
+
+            <form id="converterForm">
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter amount"
+                        min="0"
+                        step="any"
+                    >
+                </div>
+
+                <div class="currency-section">
+                    <div class="form-group">
+                        <label for="fromCurrency">From Currency</label>
+                        <select id="fromCurrency">
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="INR">INR - Indian Rupee</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="AED">AED - UAE Dirham</option>
+                            <option value="CAD">CAD - Canadian Dollar</option>
+                            <option value="AUD">AUD - Australian Dollar</option>
+                            <option value="CHF">CHF - Swiss Franc</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                        </select>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="swapButton"
+                        class="swap-button"
+                        aria-label="Swap currencies"
+                    >
+                        ⇄
+                    </button>
+
+                    <div class="form-group">
+                        <label for="toCurrency">To Currency</label>
+                        <select id="toCurrency">
+                            <option value="INR" selected>INR - Indian Rupee</option>
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="AED">AED - UAE Dirham</option>
+                            <option value="CAD">CAD - Canadian Dollar</option>
+                            <option value="AUD">AUD - Australian Dollar</option>
+                            <option value="CHF">CHF - Swiss Franc</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="loadingMessage" class="loading-message" hidden>
+                    Loading exchange rates...
+                </div>
+
+                <div id="errorMessage" class="error-message" role="alert" hidden></div>
+
+                <div id="result" class="result-box" aria-live="polite">
+                    <p>Converted Amount</p>
+                    <h2 id="convertedAmount">0.00 INR</h2>
+                    <p id="conversionDetails"></p>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" id="convertButton" class="convert-button">
+                        Convert Currency
+                    </button>
+
+                    <button type="button" id="resetButton" class="reset-button">
+                        Reset
+                    </button>
+                </div>
+
+                <p id="lastUpdated" class="last-updated"></p>
+            </form>
+        </section>
+
+        <section class="history-card">
+            <h2>Recent Conversions</h2>
+            <ul id="historyList">
+                <li class="empty-history">No conversions yet.</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

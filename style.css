@@ -1,0 +1,262 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+}
+
+/* Cards */
+.converter-card,
+.history-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    margin-bottom: 25px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 30px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Form */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+    color: #1e293b;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+    border-color: #2563eb;
+}
+
+.currency-section {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.swap-button {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: none;
+    background: #e0e7ff;
+    color: #2563eb;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 1px;
+}
+
+.swap-button:hover {
+    background: #c7d2fe;
+}
+
+/* Messages */
+.loading-message {
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.error-message {
+    color: #b91c1c;
+    background: #fee2e2;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Result */
+.result-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 25px;
+}
+
+.result-box p:first-child {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.result-box h2 {
+    color: #2563eb;
+    font-size: 30px;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+#conversionDetails {
+    color: #475569;
+    font-size: 14px;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+button {
+    font-family: inherit;
+    transition: 0.2s ease;
+}
+
+.convert-button,
+.reset-button {
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.convert-button {
+    background: #2563eb;
+    color: white;
+    flex: 2;
+}
+
+.convert-button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.reset-button {
+    background: #e2e8f0;
+    color: #334155;
+    flex: 1;
+}
+
+.reset-button:hover {
+    background: #cbd5e1;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.last-updated {
+    color: #64748b;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* History */
+.history-card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#historyList {
+    list-style: none;
+}
+
+#historyList li {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+#historyList li:last-child {
+    border-bottom: none;
+}
+
+.empty-history {
+    color: #64748b;
+    text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .converter-card,
+    .history-card {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .currency-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .swap-button {
+        align-self: center;
+        transform: rotate(90deg);
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .result-box h2 {
+        font-size: 25px;
+    }
+}
